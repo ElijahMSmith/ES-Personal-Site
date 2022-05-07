@@ -20,6 +20,7 @@
       </li>
       <li>
         <a
+<<<<<<< HEAD
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript"
           target="_blank"
           rel="noopener"
@@ -28,6 +29,8 @@
       </li>
       <li>
         <a
+=======
+>>>>>>> 07ae75ddc4b59d24633e051b45fbaf5f29e7a8d3
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
           target="_blank"
           rel="noopener"
@@ -94,15 +97,24 @@
   </div>
 </template>
 
+<<<<<<< HEAD
 <script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({
+=======
+<script>
+export default {
+>>>>>>> 07ae75ddc4b59d24633e051b45fbaf5f29e7a8d3
   name: "HelloWorld",
   props: {
     msg: String,
   },
+<<<<<<< HEAD
 });
+=======
+};
+>>>>>>> 07ae75ddc4b59d24633e051b45fbaf5f29e7a8d3
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
