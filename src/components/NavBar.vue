@@ -4,7 +4,7 @@ import NavButton from "./NavButton.vue";
 
 <template>
 	<div id="navbarContainer" class="w-full flex justify-center">
-		<NavButton id="aboutMeLink" :onPage="true" to="/about">
+		<NavButton id="aboutMeLink" :onPage="false" to="/about">
 			About Me
 		</NavButton>
 		<NavButton id="experienceLink" :onPage="false" to="/experience">

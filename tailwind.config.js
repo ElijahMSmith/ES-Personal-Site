@@ -16,6 +16,12 @@ module.exports = {
 			fontFamily: {
 				"anek-odia": ["Anek Odia", "sans-serif"],
 			},
+			width: {
+				128: "32rem",
+			},
+			height: {
+				128: "32rem",
+			},
 		},
 	},
 	plugins: [],
