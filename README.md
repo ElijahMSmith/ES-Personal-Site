@@ -1,8 +1,11 @@
-This is my personal website build with Vue.js, TypeScript, and Vite.
+## This is my personal website, built with Vue.js, TypeScript, and Vite.
 
-My personal links:
+### My personal links:
 
-elijahmsmith.me
+http://elijahmsmith.me/
+
 https://github.com/elijahmsmith
+
 https://linkedin.com/in/elijahmsmith
+
 https://devpost.com/elijah-matthew-smith
