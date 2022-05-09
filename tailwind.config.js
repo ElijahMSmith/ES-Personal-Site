@@ -12,6 +12,8 @@ module.exports = {
 				crimson: "#D7263D",
 				lightyellow: "#FEFFCF",
 				lightred: "#FFD7D7",
+				button: "#084B83",
+				buttonHover: "#032e52",
 			},
 			fontFamily: {
 				"anek-odia": ["Anek Odia", "sans-serif"],

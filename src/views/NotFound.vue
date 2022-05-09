@@ -16,7 +16,11 @@
 				</h1>
 
 				<div class="flex w-full justify-center">
-					<v-btn>Back to Safety</v-btn>
+					<router-link
+						to="/About"
+						class="transition duration-100 rounded-full bg-button text-white px-5 py-2 mt-5 hover:bg-buttonHover focus:bg-buttonHover focus:outline-black focus:outline-2 focus:outline"
+						>Back to Safety</router-link
+					>
 				</div>
 			</div>
 		</div>
