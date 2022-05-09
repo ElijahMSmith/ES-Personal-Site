@@ -6,8 +6,6 @@ import Projects from "../views/Projects.vue";
 import Connect from "../views/Connect.vue";
 import NotFound from "../views/NotFound.vue";
 
-console.log(import.meta.env.VITE_BASE_URL);
-
 const routes = [
 	{ path: "/", redirect: "/about" },
 	{ path: "/about", name: "About", component: About },

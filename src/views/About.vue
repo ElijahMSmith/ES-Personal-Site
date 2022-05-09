@@ -13,16 +13,20 @@ import IconBar from "../components/IconBar.vue";
 					id="profileContainer"
 					class="xl:mr-80 lg:mr-40 md:mr-20 mx-auto my-auto"
 				>
-					<p class="font-bold text-6xl my-10">Elijah Smith</p>
-					<p class="my-10">Rising Senior at UCF</p>
-					<p class="my-10">Honors CS and Mathematics</p>
-					<p class="my-10">Full Stack JavaScript Enthusiast</p>
-					<p class="my-10">President of Knight Hacks</p>
+					<h1
+						class="font-bold text-6xl w-full text-center text-darkblue"
+					>
+						Elijah Smith
+					</h1>
+					<p class="mt-16">Rising Senior at UCF</p>
+					<p class="my-8">Honors CS and Mathematics</p>
+					<p class="my-8">Full Stack JavaScript Enthusiast</p>
+					<p class="mb-16">President of Knight Hacks</p>
 					<IconBar />
 				</div>
 				<div
 					id="mask"
-					class="mx-auto my-auto rounded-full bg-white xl:w-128 w-96 xl:h-128 h-96 overflow-hidden border-4 border-darkblue"
+					class="mx-auto my-auto rounded-full bg-white xl:w-128 w-96 xl:h-128 h-96 overflow-hidden border-4 border-darkblue md:mt-0 mt-20"
 				>
 					<img
 						src="../assets/headshot.jpg"
@@ -35,7 +39,7 @@ import IconBar from "../components/IconBar.vue";
 	</div>
 </template>
 
-<style>
+<style scoped>
 p {
 	text-align: center;
 	font-family: "Anek Odia", "sans-serif";
