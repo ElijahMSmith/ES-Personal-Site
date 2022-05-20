@@ -1,19 +1,34 @@
 <script setup lang="ts">
 import NavButton from "./NavButton.vue";
+const { routeName } = defineProps<{
+	routeName: string;
+}>();
 </script>
 
 <template>
-	<div id="navbarContainer" class="w-full flex justify-center">
-		<NavButton id="aboutMeLink" :onPage="false" to="/about">
+	<div id="navbarContainer" class="w-full md:flex justify-center hidden">
+		<NavButton id="aboutMeLink" :onPage="routeName === 'About'" to="/about">
 			About Me
 		</NavButton>
-		<NavButton id="experienceLink" :onPage="false" to="/experience">
+		<NavButton
+			id="experienceLink"
+			:onPage="routeName === 'Experience'"
+			to="/experience"
+		>
 			Experience
 		</NavButton>
-		<NavButton id="projectsLink" :onPage="false" to="/projects">
+		<NavButton
+			id="projectsLink"
+			:onPage="routeName === 'Projects'"
+			to="/projects"
+		>
 			Projects
 		</NavButton>
-		<NavButton id="connectLink" :onPage="false" to="/connect">
+		<NavButton
+			id="connectLink"
+			:onPage="routeName === 'Connect'"
+			to="/connect"
+		>
 			Connect
 		</NavButton>
 	</div>
