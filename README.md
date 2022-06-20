@@ -9,3 +9,9 @@ https://github.com/elijahmsmith
 https://linkedin.com/in/elijahmsmith
 
 https://devpost.com/elijah-matthew-smith
+
+TODOS:
+- Make scrolling content disappear when it goes underneath the navbar
+- Figure out deployment issues and write myself documentation because I really need it
+- Experiences page
+- Projects page
