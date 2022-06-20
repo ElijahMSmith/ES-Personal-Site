@@ -6,7 +6,10 @@ const { routeName } = defineProps<{
 </script>
 
 <template>
-	<div id="navbarContainer" class="w-full md:flex justify-center hidden">
+	<div
+		id="navbarContainer"
+		class="w-full md:flex justify-center fixed top-0 z-10 hidden"
+	>
 		<NavButton id="aboutMeLink" :onPage="routeName === 'About'" to="/about">
 			About Me
 		</NavButton>

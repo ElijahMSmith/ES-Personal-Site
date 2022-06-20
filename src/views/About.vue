@@ -3,8 +3,11 @@ import IconBar from "../components/IconBar.vue";
 </script>
 
 <template>
-	<div id="contentFrame" class="w-full h-screen relative">
-		<div class="flex justify-center items-center h-3/4">
+	<div
+		id="contentFrame"
+		class="w-full h-screen flex content-center justify-center overflow-auto"
+	>
+		<div class="flex justify-center items-center my-auto">
 			<div
 				id="profileFrame"
 				class="w:1/2 h:1/4 md:flex justify-center items-center sm:block"
