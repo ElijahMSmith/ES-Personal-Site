@@ -1,0 +1,22 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+@import url("https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap");
+
+:root {
+    font-family: $font-stack;
+}
+
+html {
+    background-color: $bg-primary;
+}
+
+body {
+    margin: 0px;
+    background: linear-gradient($bg-primary, $bg-primary-darker);
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

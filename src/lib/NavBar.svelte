@@ -1,0 +1,53 @@
+<div id="nav-container">
+	<a
+		id="resume-link"
+		target="_blank"
+		rel="noopener noreferrer"
+		href="/src/assets/resume.pdf">Resume</a
+	>
+	<div id="section-links-container">
+		<a class="nav-link" href="#about">About</a>
+		<a class="nav-link" href="#expriences">Experiences</a>
+		<a class="nav-link" href="#projects">Projects</a>
+		<a class="nav-link" href="#contact">Contact</a>
+	</div>
+</div>
+
+<style lang="scss">
+	#nav-container {
+		backdrop-filter: blur(10px);
+		position: fixed;
+		width: 100vw;
+		height: 10vh;
+		left: 0px;
+		top: 0px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0vh 10vw;
+		box-sizing: border-box;
+	}
+
+	#section-links-container {
+		& > a {
+			margin-left: 5vw;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: $text-primary;
+		font-family: $font-stack;
+		font-size: 1.4em;
+	}
+
+	#resume-link {
+		border: 3px solid $text-primary;
+		padding: 5px 10px;
+		transition: all 0.2s linear;
+		&:hover {
+			background: $text-primary;
+			color: $bg-primary;
+		}
+	}
+</style>
