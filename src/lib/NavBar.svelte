@@ -7,7 +7,7 @@
 	>
 	<div id="section-links-container">
 		<a class="nav-link" href="#about">About</a>
-		<a class="nav-link" href="#expriences">Experiences</a>
+		<a class="nav-link" href="#experiences">Experiences</a>
 		<a class="nav-link" href="#projects">Projects</a>
 		<a class="nav-link" href="#contact">Contact</a>
 	</div>
@@ -15,7 +15,8 @@
 
 <style lang="scss">
 	#nav-container {
-		backdrop-filter: blur(10px);
+		// backdrop-filter: blur(10px);
+		background-color: $bg-alternate;
 		position: fixed;
 		width: 100vw;
 		height: 10vh;
@@ -28,10 +29,8 @@
 		box-sizing: border-box;
 	}
 
-	#section-links-container {
-		& > a {
-			margin-left: 5vw;
-		}
+	#section-links-container > a {
+		margin-left: 5vw;
 	}
 
 	a {
@@ -43,7 +42,7 @@
 
 	#resume-link {
 		border: 3px solid $text-primary;
-		padding: 5px 10px;
+		padding: 0px 10px;
 		transition: all 0.2s linear;
 		&:hover {
 			background: $text-primary;
