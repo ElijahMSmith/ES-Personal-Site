@@ -15,6 +15,10 @@
 </section>
 
 <style lang="scss">
+	section {
+		height: 100vh;
+	}
+
 	#container {
 		display: flex;
 		width: 80%;

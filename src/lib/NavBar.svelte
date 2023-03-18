@@ -1,3 +1,20 @@
+<script lang="ts">
+	import { onMount } from "svelte";
+
+	onMount(() => {
+		document.querySelectorAll(".nav-link").forEach((link) => {
+			link.addEventListener("click", () => {
+				document
+					.querySelectorAll(".nav-link")
+					.forEach((otherLink) =>
+						otherLink.classList.remove("active")
+					);
+				link.classList.add("active");
+			});
+		});
+	});
+</script>
+
 <div id="nav-container">
 	<a
 		id="resume-link"
@@ -32,6 +49,30 @@
 
 	#section-links-container > a {
 		margin-left: 5vw;
+		position: relative;
+
+		&::after {
+			position: absolute;
+			content: "";
+			height: 2px;
+			bottom: 0px;
+			left: 0;
+			width: 0%;
+			background: $text-primary;
+			transition: width 0.3s ease-out;
+		}
+
+		&:hover {
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+
+	:global(.nav-link.active) {
+		&::after {
+			width: 100% !important;
+		}
 	}
 
 	a {
@@ -47,7 +88,7 @@
 		transition: background 0.2s linear, color 0.2s linear;
 		&:hover {
 			background: $text-primary;
-			color: $bg-alternate;
+			color: $bg-primary;
 		}
 	}
 

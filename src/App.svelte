@@ -5,6 +5,11 @@
 	import Experiences from "./lib/sections/Experiences.svelte";
 	import Projects from "./lib/sections/Projects.svelte";
 	import Contact from "./lib/sections/Contact.svelte";
+
+	import { gsap } from "gsap";
+	import ScrollTrigger from "gsap/ScrollTrigger";
+
+	gsap.registerPlugin(ScrollTrigger);
 </script>
 
 <NavBar />
@@ -17,6 +22,3 @@
 		<Contact />
 	</div>
 </main>
-
-<style lang="scss">
-</style>

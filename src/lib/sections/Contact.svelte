@@ -27,6 +27,7 @@
 
 	section {
 		flex-direction: column;
+		height: 100vh;
 		a,
 		h1 {
 			color: $text-primary;
@@ -46,6 +47,10 @@
 		margin-bottom: calc($m * 2);
 		overflow-wrap: break-word;
 		word-break: break-all;
+		transition: all 0.2s linear;
+		&:hover {
+			color: $text-highlight;
+		}
 	}
 
 	@media only screen and (max-width: 632px) {
