@@ -26,7 +26,7 @@
 	>
 		<img
 			style="width:{dims}; height: {dims}"
-			src="/github.svg"
+			src="github.svg"
 			alt="GitHub link"
 		/>
 	</a>
@@ -38,7 +38,7 @@
 	>
 		<img
 			style="width:{dims}; height: {dims}"
-			src="/linkedin.svg"
+			src="linkedin.svg"
 			alt="LinkedIn link"
 		/>
 	</a>

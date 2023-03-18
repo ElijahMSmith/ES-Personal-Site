@@ -6,7 +6,8 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"preview": "vite preview",
+		"preview": "vite preview", 
+        "test": "npm run build & npm run preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
         "deploy": "npx gh-pages -d dist"
 	},

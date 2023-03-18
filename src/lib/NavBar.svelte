@@ -20,7 +20,7 @@
 		id="resume-link"
 		target="_blank"
 		rel="noopener noreferrer"
-		href="/resume.pdf">Resume</a
+		href="resume.pdf">Resume</a
 	>
 	<div id="section-links-container">
 		<a class="nav-link" href="#about">About</a>
