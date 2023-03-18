@@ -1,9 +1,6 @@
 <script lang="ts">
 	export let dims = "5vw";
 	let innerWidth = 0;
-	function open(url: string) {
-		window.open(url, "_blank");
-	}
 </script>
 
 <svelte:window bind:innerWidth />
@@ -16,7 +13,7 @@
 		>
 			<img
 				style="width:{dims}; height: {dims}"
-				src="/src/assets/email.svg"
+				src="/email.svg"
 				alt="Email link"
 			/>
 		</a>
@@ -29,7 +26,7 @@
 	>
 		<img
 			style="width:{dims}; height: {dims}"
-			src="/src/assets/github.svg"
+			src="/github.svg"
 			alt="GitHub link"
 		/>
 	</a>
@@ -41,7 +38,7 @@
 	>
 		<img
 			style="width:{dims}; height: {dims}"
-			src="/src/assets/linkedin.svg"
+			src="/linkedin.svg"
 			alt="LinkedIn link"
 		/>
 	</a>
