@@ -9,7 +9,7 @@
 			</p>
 		</div>
 		<div class="right">
-			<img src="headshot.jpg" alt="Personal Headshot" />
+			<img src="images/headshot.jpg" alt="Personal Headshot" />
 		</div>
 	</div>
 </section>

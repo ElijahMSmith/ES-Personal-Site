@@ -1,5 +1,5 @@
 <script lang="ts">
-	import IconRow from "../IconRow.svelte";
+	import IconRow from "./components/IconRow.svelte";
 
 	let innerWidth = 0;
 
