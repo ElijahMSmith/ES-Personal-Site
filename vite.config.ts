@@ -4,7 +4,7 @@ import { svelte } from "@sveltejs/vite-plugin-svelte";
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [svelte()],
-	base: "/ES-Personal-Site/",
+	// base: "/ES-Personal-Site/",
 	css: {
 		preprocessorOptions: {
 			scss: {
