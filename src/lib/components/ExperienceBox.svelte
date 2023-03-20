@@ -1,30 +1,40 @@
 <script lang="ts">
-	export let title: string;
-	export let organization: string;
-	export let description: string;
-	export let date: string;
-	export let imgSrc = "images/contentPlaceholder.png";
+	import type { Experience } from "../types";
+	export let experience: Experience;
+	experience.imgSrc = "images/contentPlaceholder.png";
+	const {
+		title,
+		organization,
+		location,
+		date,
+		technologies,
+		description,
+		imgSrc,
+	} = experience;
 	export let align: "right" | "left";
 </script>
 
 <div class="content-container {align}">
-	{#if align == "left"}
-		<div class="content-text-container">
-			<h3 class="content-title">{title}</h3>
-			<p class="content-org">{organization}</p>
-			<p class="content-description">{description}</p>
-		</div>
+	{#if imgSrc && align === "right"}
 		<img src={imgSrc} alt="Preview/Logo" />
-	{:else}
+	{/if}
+	<div class="content-text-container">
+		<h3 class="content-title">{title}</h3>
+		<p class="content-subtitle">
+			{organization} - {location}<br />
+			{date}
+		</p>
+		<ol class="desc-bullets">
+			{#each description as bullet}
+				<li class="content-description">{bullet}</li>
+			{/each}
+		</ol>
+		{#if technologies}
+			<p class="content-technologies">{technologies}</p>
+		{/if}
+	</div>
+	{#if imgSrc && align === "left"}
 		<img src={imgSrc} alt="Preview/Logo" />
-		<div class="content-text-container">
-			<h3 class="content-title">{title}</h3>
-			<div class="text-inline">
-				<p class="content-org">{organization}</p>
-				<p class="date">{date}</p>
-			</div>
-			<p class="content-description">{description}</p>
-		</div>
 	{/if}
 </div>
 
@@ -38,7 +48,10 @@
 		background-color: $bg-accent;
 		display: flex;
 		align-items: center;
-		height: 20vh;
+		min-height: 20vh;
+		width: 80%;
+		padding: 20px 0px;
+
 		&.left {
 			justify-content: start;
 			.content-text-container {
@@ -50,6 +63,7 @@
 			justify-content: end;
 			.content-text-container {
 				align-items: end;
+				text-align: end;
 			}
 		}
 	}
@@ -60,14 +74,24 @@
 		flex-direction: column;
 		justify-content: center;
 		margin: 0px 30px;
+		flex: 3;
 		& > * {
 			margin: 10px 0px;
 		}
 	}
 
+	.text-inline {
+		display: flex;
+		width: 100%;
+		align-items: end;
+		& > * {
+			margin: 0px 0px;
+		}
+	}
+
 	img {
-		height: 60%;
 		margin: 0px 30px;
+		flex: 1;
 	}
 
 	.content-title {
@@ -76,12 +100,18 @@
 		margin-top: 0px;
 	}
 
-	.content-org {
+	.content-subtitle {
 		font-size: 1.4em;
 		font-weight: bold;
 	}
 
 	.content-description {
 		font-size: 1.2em;
+		text-align: start;
+	}
+
+	.content-technologies {
+		font-size: 1.2em;
+		font-weight: bold;
 	}
 </style>
