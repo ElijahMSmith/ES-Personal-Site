@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Experience } from "../types";
 	export let experience: Experience;
-	experience.imgSrc = "images/contentPlaceholder.png";
+
 	const {
 		title,
 		organization,
@@ -49,7 +49,7 @@
 		display: flex;
 		align-items: center;
 		min-height: 20vh;
-		width: 80%;
+		max-width: 80%;
 		padding: 20px 0px;
 
 		&.left {
