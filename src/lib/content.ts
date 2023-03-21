@@ -123,7 +123,7 @@ export const allProjects: Project[] = [
 			"Desktop visualization tool for improving time management and event timeliness. Made at ShellHacks 2021.",
 		],
 		technologies: "Python, tkinter, Google Calendar API",
-		link: "https://github.com/Kronos",
+		link: "https://github.com/ElijahMSmith/Kronos",
 	},
 	{
 		title: "Othello",
@@ -132,6 +132,6 @@ export const allProjects: Project[] = [
 			"Desktop game to play the classic board game Othello against another player or one of three computer difficulties.",
 		],
 		technologies: "Java, Java Swing",
-		link: "https://github.com/Othello",
+		link: "https://github.com/ElijahMSmith/Othello",
 	},
 ];
