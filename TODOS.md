@@ -1,5 +1,6 @@
--   Progressive blur on nav bar?
--   Hamburger for when navbar links are hidden on small site?
+-   Progressive blur on nav bar
+-   Hamburger (or something else) for when navbar links are hidden on small site
+-   Add demo video preview in image slot for projects
 -   More fun animations! Ideas:
     -   Subtle motion in the background or activity (maybe a blur that follows you?)
     -   Specular highlight through intro text when you hover/approach it?
