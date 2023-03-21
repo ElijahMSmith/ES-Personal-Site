@@ -88,16 +88,6 @@ export const allProjects: Project[] = [
 		link: "https://github.com/ElijahMSmith/Senior-Design-Emotion-Game",
 	},
 	{
-		title: "Band Names",
-		date: "Oct 2021 - Present",
-		description: [
-			"Passion project Chrome extension to suggest ridiculous names for your band to be used as usernames.",
-			"Pick from real things said by those around me or generate a new verb + noun combination.",
-		],
-		technologies: "TypeScript, Chrome API",
-		link: "https://github.com/ElijahMSmith/BandNames",
-	},
-	{
 		title: "Mobile Deck of Cards",
 		date: "Jan - Apr 2022",
 		description: [
@@ -106,6 +96,16 @@ export const allProjects: Project[] = [
 		technologies:
 			"TypeScript, Express.js, MongoDB Atlas, Socket.io, Mocha.js",
 		link: "https://github.com/ElijahMSmith/DeckOfCards-BE",
+	},
+	{
+		title: "Band Names",
+		date: "Oct 2021 - Nov 2022",
+		description: [
+			"Passion project Chrome extension to suggest ridiculous names for your band to be used as usernames.",
+			"Pick from real things said by those around me or generate a new verb + noun combination.",
+		],
+		technologies: "TypeScript, Chrome API",
+		link: "https://github.com/ElijahMSmith/BandNames",
 	},
 	{
 		title: "Daily Challenge Problem Bot",

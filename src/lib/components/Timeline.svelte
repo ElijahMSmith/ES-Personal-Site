@@ -123,4 +123,16 @@
 		position: absolute;
 		top: calc(50% - $bulletSize / 2);
 	}
+
+	@media only screen and (max-width: 750px) {
+		h1 {
+			font-size: 3em;
+		}
+	}
+
+	@media only screen and (max-width: 450px) {
+		h1 {
+			font-size: 2em;
+		}
+	}
 </style>

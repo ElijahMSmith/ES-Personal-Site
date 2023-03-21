@@ -20,30 +20,31 @@
 </script>
 
 <div class="content-container {align}">
-	<p class="date">{date}</p>
-	{#if imgSrc && align === "right"}
-		<img src={imgSrc} alt="Preview/Logo" />
-	{/if}
-	<div class="content-text-container">
-		<h3 class="content-title">{title}</h3>
-
-		{#if organization && location}
-			<p class="content-subtitle">
-				{organization} - {location}<br />
-			</p>
+	<h3 class="content-title">{title}</h3>
+	<div class="inner-container {align}">
+		<p class="date">{date}</p>
+		{#if imgSrc && align === "right"}
+			<img src={imgSrc} alt="Preview/Logo" />
 		{/if}
-		<ul class="desc-bullets">
-			{#each description as bullet}
-				<li class="content-description">{bullet}</li>
-			{/each}
-		</ul>
-		{#if technologies}
-			<p class="content-technologies">{technologies}</p>
+		<div class="content-text-container">
+			{#if organization && location}
+				<p class="content-subtitle">
+					{organization} - {location}<br />
+				</p>
+			{/if}
+			<ul class="desc-bullets">
+				{#each description as bullet}
+					<li class="content-description">{bullet}</li>
+				{/each}
+			</ul>
+			{#if technologies}
+				<p class="content-technologies">{technologies}</p>
+			{/if}
+		</div>
+		{#if imgSrc && align === "left"}
+			<img src={imgSrc} alt="Preview/Logo" />
 		{/if}
 	</div>
-	{#if imgSrc && align === "left"}
-		<img src={imgSrc} alt="Preview/Logo" />
-	{/if}
 </div>
 
 <style lang="scss">
@@ -53,10 +54,24 @@
 
 	.content-container {
 		background-color: $bg-accent;
+		padding: 20px 30px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 20vh;
+
+		&.left {
+			text-align: start;
+		}
+
+		&.right {
+			text-align: end;
+		}
+	}
+
+	.inner-container {
 		display: flex;
 		align-items: center;
-		min-height: 20vh;
-		padding: 20px 0px;
 		margin: 0px;
 
 		&.left {
@@ -64,13 +79,12 @@
 			.content-text-container {
 				align-items: start;
 				text-align: start;
-				margin: 0px 30px;
 			}
 			.date {
 				left: calc(10vw + 30px);
 			}
 			img {
-				margin-right: 30px;
+				margin-left: 30px;
 			}
 		}
 
@@ -79,13 +93,12 @@
 			.content-text-container {
 				align-items: end;
 				text-align: end;
-				margin: 0px 30px;
 			}
 			.date {
 				right: calc(10vw + 30px);
 			}
 			img {
-				margin-left: 30px;
+				margin-right: 30px;
 			}
 		}
 	}
@@ -127,11 +140,12 @@
 
 	.content-title {
 		font-size: 2.4em;
-		font-weight: normal;
-		margin-top: 0px;
+		font-weight: bold;
+		margin: 0px;
 	}
 
 	.content-subtitle {
+		margin-top: 0px;
 		font-size: 1.4em;
 		font-weight: bold;
 	}
@@ -144,5 +158,34 @@
 	.content-technologies {
 		font-size: 1.2em;
 		font-weight: bold;
+	}
+
+	@media only screen and (max-width: 1000px) {
+		img {
+			display: none;
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+		.content-container {
+			min-height: auto;
+		}
+
+		.content-title {
+			font-size: 1.8em;
+		}
+
+		.content-subtitle {
+			font-size: 1.2em;
+		}
+
+		.content-description {
+			display: none;
+		}
+
+		.content-technologies {
+			font-size: 1em;
+			font-weight: normal;
+		}
 	}
 </style>

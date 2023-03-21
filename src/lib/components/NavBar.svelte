@@ -37,7 +37,7 @@
 		// background-color: $bg-alternate;
 		position: fixed;
 		width: 100vw;
-		height: 5vh;
+		height: 75px;
 		left: 0px;
 		top: 0px;
 		display: flex;
