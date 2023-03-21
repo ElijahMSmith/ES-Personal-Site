@@ -37,7 +37,7 @@
 		// background-color: $bg-alternate;
 		position: fixed;
 		width: 100vw;
-		height: 5vh;
+		height: 75px;
 		left: 0px;
 		top: 0px;
 		display: flex;
@@ -45,6 +45,7 @@
 		align-items: center;
 		padding: 0vh 10vw;
 		box-sizing: border-box;
+		z-index: 100;
 	}
 
 	#section-links-container > a {
@@ -76,7 +77,6 @@
 	}
 
 	a {
-		text-decoration: none;
 		color: $text-primary;
 		font-family: $font-stack;
 		font-size: 1.4em;

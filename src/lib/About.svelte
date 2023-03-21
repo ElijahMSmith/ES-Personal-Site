@@ -67,12 +67,19 @@
 
 <style lang="scss">
 	section {
+		margin-bottom: 25vh;
 		flex-direction: column;
 		color: $text-primary;
 		& > * {
 			width: 70%;
 			margin: 3vh;
 		}
+	}
+
+	h1 {
+		color: $text-highlight;
+		font-size: 5em;
+		margin-top: 10vh;
 	}
 
 	p {
@@ -92,12 +99,6 @@
 		font-size: 2em;
 	}
 
-	h1 {
-		color: $text-highlight;
-		font-size: 5em;
-		margin-top: 10vh;
-	}
-
 	@keyframes -global-tech-slide {
 		0% {
 			transform: translateX(-100px);
@@ -106,6 +107,20 @@
 		100% {
 			transform: translateX(0px);
 			opacity: 1;
+		}
+	}
+
+	@media only screen and (max-width: 550px) {
+		h1 {
+			font-size: 3em;
+		}
+
+		p {
+			font-size: 1.4em;
+		}
+
+		li {
+			font-size: 1.4em;
 		}
 	}
 </style>
