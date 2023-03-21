@@ -9,12 +9,23 @@
 			</p>
 		</div>
 		<div class="right">
-			<img src="images/headshot.jpg" alt="Personal Headshot" />
+			<div class="img-wrapper">
+				<img src="images/headshot.jpg" alt="Personal Headshot" />
+			</div>
 		</div>
 	</div>
 </section>
 
 <style lang="scss">
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
 	section {
 		height: 100vh;
 	}
@@ -37,6 +48,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		position: relative;
 	}
 
 	h1,
@@ -63,9 +75,44 @@
 	}
 
 	img {
-		max-width: 400px;
 		width: 100%;
 		border-radius: 100%;
+		z-index: 2;
+		position: relative;
+	}
+
+	.img-wrapper {
+		$border-size: 10px;
+		width: 30vw;
+		max-width: 400px;
+		height: 30vw;
+		max-height: 400px;
+		position: relative;
+		border-radius: 100%;
+		&::after {
+			content: "";
+			width: 100%;
+			height: 100%;
+			top: -$border-size;
+			left: -$border-size;
+			display: block;
+			position: absolute;
+			border-radius: 100%;
+			border: $border-size dashed $bg-alternate;
+			stroke-dashoffset: 100;
+			z-index: 1;
+			transition: all 0.3s linear;
+			animation: spin 20s linear 0s infinite forwards;
+		}
+
+		&:hover {
+			&::after {
+				border-width: calc(2 * $border-size);
+				left: calc(-2 * $border-size);
+				top: calc(-2 * $border-size);
+				animation-duration: 5s;
+			}
+		}
 	}
 
 	// Phone or very small
@@ -81,12 +128,13 @@
 			text-align: center;
 		}
 
-		.right {
-			margin-top: 5vh;
+		.img-wrapper {
+			width: 60vw;
+			height: 60vw;
 		}
 
-		img {
-			width: 70%;
+		.right {
+			margin-top: 5vh;
 		}
 	}
 

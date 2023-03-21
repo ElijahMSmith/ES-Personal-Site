@@ -45,7 +45,7 @@
 		align-items: center;
 		padding: 0vh 10vw;
 		box-sizing: border-box;
-		z-index: 10;
+		z-index: 100;
 	}
 
 	#section-links-container > a {

@@ -42,6 +42,18 @@
 			alt="LinkedIn link"
 		/>
 	</a>
+
+	<a
+		target="_blank"
+		rel="noopener noreferrer"
+		href="https://codepen.io/ElijahMSmith"
+	>
+		<img
+			style="width:{dims}; height: {dims}"
+			src="codepen.svg"
+			alt="Codepen Link"
+		/>
+	</a>
 </div>
 
 <style lang="scss">

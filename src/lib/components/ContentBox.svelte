@@ -59,6 +59,7 @@
 		flex-direction: column;
 		justify-content: center;
 		min-height: 20vh;
+		border-radius: 10px;
 
 		&.left {
 			text-align: start;
