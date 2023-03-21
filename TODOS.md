@@ -1,7 +1,6 @@
-Progressive blur on navbar?
-
--   Align everything to the top of the navbar
--   Create x divs at the other side (space-between and wrappers)
--   For each div, make the blur one pixel stronger
-
--   WHY DOES NAVBAR NOT BLUR THE ABOUT SECTION TEXT?
+-   Progressive blur on nav bar?
+-   Hamburger for when navbar links are hidden on small site?
+-   More fun animations! Ideas:
+    -   Subtle motion in the background or activity (maybe a blur that follows you?)
+    -   Specular highlight through intro text when you hover/approach it?
+    -   Better link email hover highlight
