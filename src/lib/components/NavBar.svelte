@@ -77,7 +77,6 @@
 	}
 
 	a {
-		text-decoration: none;
 		color: $text-primary;
 		font-family: $font-stack;
 		font-size: 1.4em;

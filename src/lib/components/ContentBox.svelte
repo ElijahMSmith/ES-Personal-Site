@@ -1,29 +1,32 @@
 <script lang="ts">
-	import type { Experience } from "../types";
-	export let experience: Experience;
-
-	const {
-		title,
-		organization,
-		location,
-		date,
-		technologies,
-		description,
-		imgSrc,
-	} = experience;
+	import { isExperience, type Experience, type Project } from "../types";
+	export let item: Experience | Project;
 	export let align: "right" | "left";
+
+	type opString = string | undefined;
+
+	const { title, date, technologies, description, imgSrc } = item;
+
+	let organization: opString, location: opString;
+	if (isExperience(item)) {
+		organization = (item as Experience).organization;
+		location = (item as Experience).location;
+	}
 </script>
 
 <div class="content-container {align}">
+	<p class="date">{date}</p>
 	{#if imgSrc && align === "right"}
 		<img src={imgSrc} alt="Preview/Logo" />
 	{/if}
 	<div class="content-text-container">
 		<h3 class="content-title">{title}</h3>
-		<p class="content-subtitle">
-			{organization} - {location}<br />
-			{date}
-		</p>
+
+		{#if organization && location}
+			<p class="content-subtitle">
+				{organization} - {location}<br />
+			</p>
+		{/if}
 		<ol class="desc-bullets">
 			{#each description as bullet}
 				<li class="content-description">{bullet}</li>
@@ -40,7 +43,6 @@
 
 <style lang="scss">
 	* {
-		text-decoration: none;
 		color: $text-primary;
 	}
 
@@ -49,13 +51,21 @@
 		display: flex;
 		align-items: center;
 		min-height: 20vh;
-		max-width: 80%;
 		padding: 20px 0px;
+		margin: 0px;
 
 		&.left {
 			justify-content: start;
 			.content-text-container {
 				align-items: start;
+				text-align: start;
+				margin: 0px 30px;
+			}
+			.date {
+				left: calc(10vw + 30px);
+			}
+			img {
+				margin-right: 30px;
 			}
 		}
 
@@ -64,8 +74,22 @@
 			.content-text-container {
 				align-items: end;
 				text-align: end;
+				margin: 0px 30px;
+			}
+			.date {
+				right: calc(10vw + 30px);
+			}
+			img {
+				margin-left: 30px;
 			}
 		}
+	}
+
+	.date {
+		position: absolute;
+		top: -70px;
+		font-size: 1.4em;
+		font-weight: bold;
 	}
 
 	.content-text-container {
@@ -73,7 +97,6 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		margin: 0px 30px;
 		flex: 3;
 		& > * {
 			margin: 10px 0px;
@@ -90,8 +113,8 @@
 	}
 
 	img {
-		margin: 0px 30px;
 		flex: 1;
+		border-radius: 20px;
 	}
 
 	.content-title {
