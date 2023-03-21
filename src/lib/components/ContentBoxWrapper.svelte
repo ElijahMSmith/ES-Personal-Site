@@ -1,13 +1,19 @@
 <script lang="ts">
-	import { isExperience, type Experience, type Project } from "../types";
+	import {
+		isExperience,
+		isProject,
+		type Content,
+		type Experience,
+		type Project,
+	} from "../types";
 	import ContentBox from "./ContentBox.svelte";
-	export let item: Experience | Project;
+	export let item: Content;
 	export let align: "right" | "left";
 
 	let experience: Experience | undefined;
 	let project: Project | undefined;
 	$: experience = isExperience(item) ? (item as Experience) : undefined;
-	$: project = !isExperience(item) ? (item as Project) : undefined;
+	$: project = isProject(item) ? (item as Project) : undefined;
 </script>
 
 {#if experience}

@@ -48,6 +48,7 @@
 		overflow-wrap: break-word;
 		word-break: break-all;
 		transition: all 0.2s linear;
+		text-decoration: underline;
 		&:hover {
 			color: $text-highlight;
 		}

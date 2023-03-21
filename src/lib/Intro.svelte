@@ -69,7 +69,7 @@
 	}
 
 	// Phone or very small
-	@media only screen and (max-width: 750px) {
+	@media only screen and (max-width: 800px) {
 		#container {
 			width: 80%;
 			flex-direction: column;

@@ -1,40 +1,56 @@
 <script lang="ts">
 	import gsap from "gsap";
 	import { onMount } from "svelte";
-	import type { Experience, Project } from "../types";
+	import { allExperiences } from "../content";
+	import { isExperience, type Experience, type Project } from "../types";
 	import ContentBoxWrapper from "./ContentBoxWrapper.svelte";
 
 	export let header: string;
 	export let content: Experience[] | Project[];
 
+	const base = isExperience(content[0]) ? 0 : allExperiences.length;
+	const typeName = isExperience(content[0]) ? "experience" : "project";
+
 	onMount(() => {
+		let selector: string;
 		for (let i = 0; i < content.length; i++) {
-			let selector = `.item-${i}`;
+			selector = `.item-${base + i}`;
 			gsap.set(selector, { translateY: "5vw", opacity: 0 });
 			gsap.to(selector, {
 				translateY: "0",
 				opacity: 1,
 				scrollTrigger: {
 					trigger: selector,
-					start: "top 85%",
+					start: "top 90%",
 				},
 				duration: 1,
-				delay: (i - 1) * 0.05,
 			});
 		}
+
+		selector = `.header-${typeName}`;
+		gsap.set(selector, { translateY: "5vw", opacity: 0 });
+		gsap.to(selector, {
+			opacity: 1,
+			translateY: "0",
+			scrollTrigger: {
+				trigger: selector,
+				start: "top 90%",
+			},
+			duration: 1,
+		});
 	});
 </script>
 
 <div class="content-wrapper">
 	<span class="timeline left" />
 	<span class="timeline right" />
-	<h1>{header}</h1>
+	<h1 class={`header-${typeName}`}>{header}</h1>
 
 	{#each content as item, index}
 		<div
-			class={`item-container ${
-				index % 2 == 0 ? "left" : "right"
-			} item-${index}`}
+			class={`item-container ${index % 2 == 0 ? "left" : "right"} item-${
+				base + index
+			}`}
 		>
 			<span class="bullet" />
 			<ContentBoxWrapper

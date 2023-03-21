@@ -17,6 +17,13 @@ export interface Project {
 	imgSrc?: string;
 }
 
-export function isExperience(thing: Experience | Project): boolean {
-	return thing.hasOwnProperty("location");
+export type Content = Experience | Project;
+export type OptionalContent = Content | undefined;
+
+export function isExperience(thing: OptionalContent): boolean {
+	return thing && thing.hasOwnProperty("location");
+}
+
+export function isProject(thing: OptionalContent): boolean {
+	return thing && thing.hasOwnProperty("link");
 }

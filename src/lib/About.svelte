@@ -67,6 +67,7 @@
 
 <style lang="scss">
 	section {
+		margin-bottom: 25vh;
 		flex-direction: column;
 		color: $text-primary;
 		& > * {

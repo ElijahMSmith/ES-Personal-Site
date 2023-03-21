@@ -1,6 +1,11 @@
 <script lang="ts">
-	import { isExperience, type Experience, type Project } from "../types";
-	export let item: Experience | Project;
+	import {
+		isExperience,
+		type Content,
+		type Experience,
+		type Project,
+	} from "../types";
+	export let item: Content;
 	export let align: "right" | "left";
 
 	type opString = string | undefined;
@@ -27,11 +32,11 @@
 				{organization} - {location}<br />
 			</p>
 		{/if}
-		<ol class="desc-bullets">
+		<ul class="desc-bullets">
 			{#each description as bullet}
 				<li class="content-description">{bullet}</li>
 			{/each}
-		</ol>
+		</ul>
 		{#if technologies}
 			<p class="content-technologies">{technologies}</p>
 		{/if}
@@ -115,6 +120,9 @@
 	img {
 		flex: 1;
 		border-radius: 20px;
+		max-height: 200px;
+		max-width: 200px;
+		object-fit: contain;
 	}
 
 	.content-title {
