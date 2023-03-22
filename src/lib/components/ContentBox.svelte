@@ -42,7 +42,14 @@
 			{/if}
 		</div>
 		{#if imgSrc && align === "left"}
-			<img src={imgSrc} alt="Preview/Logo" />
+			<!-- <img class="preview" src={imgSrc} alt="Preview/Logo" /> -->
+			<!-- TODO: Add video preview option for projects, include for both right and left alignments (here only for left) -->
+			<iframe
+				class="preview"
+				title="Preview"
+				src="https://www.youtube.com/embed/mxsNwl-X8tM"
+				allowfullscreen
+			/>
 		{/if}
 	</div>
 </div>
@@ -84,7 +91,7 @@
 			.date {
 				left: calc(10vw + 30px);
 			}
-			img {
+			.preview {
 				margin-left: 30px;
 			}
 		}
@@ -98,7 +105,7 @@
 			.date {
 				right: calc(10vw + 30px);
 			}
-			img {
+			.preview {
 				margin-right: 30px;
 			}
 		}
@@ -131,7 +138,7 @@
 		}
 	}
 
-	img {
+	.preview {
 		flex: 1;
 		border-radius: 20px;
 		max-height: 200px;
@@ -162,7 +169,7 @@
 	}
 
 	@media only screen and (max-width: 1000px) {
-		img {
+		.preview {
 			display: none;
 		}
 	}
