@@ -115,43 +115,6 @@
 		}
 	}
 
-	// Phone or very small
-	@media only screen and (max-width: 800px) {
-		#container {
-			width: 80%;
-			flex-direction: column;
-		}
-
-		.left {
-			align-items: center;
-			padding: 0px;
-			text-align: center;
-		}
-
-		.img-wrapper {
-			width: 60vw;
-			height: 60vw;
-		}
-
-		.right {
-			margin-top: 5vh;
-		}
-	}
-
-	@media only screen and (max-width: 1050px) {
-		.title {
-			font-size: 3em;
-		}
-
-		.subtitle {
-			font-size: 2em;
-		}
-
-		.body {
-			font-size: 1.2em;
-		}
-	}
-
 	// Very large desktop
 	@media only screen and (min-width: 1500px) {
 		.title {
@@ -168,6 +131,58 @@
 
 		img {
 			max-width: 500px;
+		}
+	}
+	@media only screen and (max-width: 1050px) {
+		.title {
+			font-size: 3em;
+		}
+
+		.subtitle {
+			font-size: 2em;
+		}
+
+		.body {
+			font-size: 1.2em;
+		}
+	}
+
+	// Phone or very small
+	@media only screen and (max-width: 800px) {
+		#container {
+			width: 80%;
+			flex-direction: column;
+		}
+
+		.left {
+			align-items: center;
+			padding: 0px;
+			text-align: center;
+		}
+
+		.img-wrapper {
+			height: 60vw;
+			width: 60vw;
+			max-height: 250px;
+			max-width: 250px;
+		}
+
+		.right {
+			margin-top: 5vh;
+		}
+	}
+
+	@media only screen and (max-width: 350px) {
+		.title {
+			font-size: 2em;
+		}
+
+		.subtitle {
+			font-size: 1.4em;
+		}
+
+		.body {
+			font-size: 1em;
 		}
 	}
 </style>
