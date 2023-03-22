@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 
+	function toggleMenu() {
+		console.log("test");
+	}
+
 	onMount(() => {
 		document.querySelectorAll(".nav-link").forEach((link) => {
 			link.addEventListener("click", () => {
@@ -22,12 +26,17 @@
 		rel="noopener noreferrer"
 		href="resume.pdf">Resume</a
 	>
+
 	<div id="section-links-container">
 		<a class="nav-link" href="#about">About</a>
 		<a class="nav-link" href="#experiences">Experiences</a>
 		<a class="nav-link" href="#projects">Projects</a>
 		<a class="nav-link" href="#contact">Contact</a>
 	</div>
+
+	<button id="drawer-toggle" on:click={toggleMenu}>
+		<img src="menu.svg" alt="Menu Toggle" />
+	</button>
 	<!-- TODO: Add hamburger or some other replacement for hidden navigation links -->
 </div>
 
@@ -46,6 +55,24 @@
 		padding: 0vh 10vw;
 		box-sizing: border-box;
 		z-index: 100;
+	}
+
+	#drawer-toggle {
+		width: 45px;
+		height: 45px;
+		border-radius: 100%;
+		background: none;
+		border: none;
+		cursor: pointer;
+
+		img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	#section-links-container {
+		display: none; //TODO remove
 	}
 
 	#section-links-container > a {
@@ -99,7 +126,7 @@
 		}
 
 		#nav-container {
-			justify-content: center;
+			height: 60px;
 		}
 	}
 
