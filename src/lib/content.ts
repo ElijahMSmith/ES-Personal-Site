@@ -92,6 +92,7 @@ export const allProjects: Project[] = [
 		],
 		technologies: "Python, ROS2, TensorFlow, opencv-python",
 		link: "https://github.com/ElijahMSmith/Senior-Design-Emotion-Game",
+        imgSrc: "images/BEARMAX.png"
 	},
 	{
 		title: "Mobile Deck of Cards",
