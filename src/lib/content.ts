@@ -1,6 +1,12 @@
 import type { Project } from "./types";
 import type { Experience } from "./types";
 
+const previewURLBase = "https://www.youtube.com/embed/";
+
+function getPreviewURL(videoID: string) {
+	return previewURLBase + videoID;
+}
+
 export const allExperiences: Experience[] = [
 	{
 		title: "Software Engineer Intern",
@@ -96,6 +102,7 @@ export const allProjects: Project[] = [
 		technologies:
 			"TypeScript, Express.js, MongoDB Atlas, Socket.io, Mocha.js",
 		link: "https://github.com/ElijahMSmith/DeckOfCards-BE",
+		videoSrc: getPreviewURL("mxsNwl-X8tM"),
 	},
 	{
 		title: "Band Names",
@@ -106,6 +113,7 @@ export const allProjects: Project[] = [
 		],
 		technologies: "TypeScript, Chrome API",
 		link: "https://github.com/ElijahMSmith/BandNames",
+		imgSrc: "images/BandNames.png",
 	},
 	{
 		title: "Daily Challenge Problem Bot",
@@ -115,6 +123,7 @@ export const allProjects: Project[] = [
 		],
 		technologies: "TypeScript, Discord.js, Google Cloud Functions",
 		link: "https://github.com/ElijahMSmith/Daily-Challenge-Problem",
+		imgSrc: "images/DCP.png",
 	},
 	{
 		title: "Kronos",
@@ -124,6 +133,7 @@ export const allProjects: Project[] = [
 		],
 		technologies: "Python, tkinter, Google Calendar API",
 		link: "https://github.com/ElijahMSmith/Kronos",
+		videoSrc: getPreviewURL("2jvEuN-SJQ4"),
 	},
 	{
 		title: "Othello",

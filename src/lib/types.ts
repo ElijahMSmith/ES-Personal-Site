@@ -1,23 +1,22 @@
-export interface Experience {
-	title: string;
+export interface Experience extends Content {
 	location: string;
 	organization: string;
-	date: string;
-	description: string[];
 	technologies?: string;
-	imgSrc?: string;
 }
 
-export interface Project {
+export interface Project extends Content {
+	technologies: string;
+	link: string;
+}
+
+export interface Content {
 	title: string;
 	date: string;
-	technologies: string;
 	description: string[];
-	link: string;
 	imgSrc?: string;
+	videoSrc?: string;
 }
 
-export type Content = Experience | Project;
 export type OptionalContent = Content | undefined;
 
 export function isExperience(thing: OptionalContent): boolean {

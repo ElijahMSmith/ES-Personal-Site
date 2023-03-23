@@ -1,6 +1,7 @@
 <script lang="ts">
 	import {
 		isExperience,
+		isProject,
 		type Content,
 		type Experience,
 		type Project,
@@ -10,21 +11,35 @@
 
 	type opString = string | undefined;
 
-	const { title, date, technologies, description, imgSrc } = item;
+	const { title, date, description, imgSrc, videoSrc } = item;
 
-	let organization: opString, location: opString;
+	let organization: opString, location: opString, technologies: opString;
 	if (isExperience(item)) {
 		organization = (item as Experience).organization;
 		location = (item as Experience).location;
+		technologies = (item as Experience).technologies;
+	} else if (isProject(item)) {
+		technologies = (item as Experience).technologies;
 	}
+
+	console.log(align, imgSrc, videoSrc, title);
 </script>
 
 <div class="content-container {align}">
 	<h3 class="content-title">{title}</h3>
 	<div class="inner-container {align}">
 		<p class="date">{date}</p>
-		{#if imgSrc && align === "right"}
-			<img src={imgSrc} alt="Preview/Logo" />
+		{#if align === "right"}
+			{#if imgSrc}
+				<img class="preview" src={imgSrc} alt="Preview/Logo" />
+			{:else if videoSrc}
+				<iframe
+					class="preview"
+					title="Preview"
+					src={videoSrc}
+					allowfullscreen
+				/>
+			{/if}
 		{/if}
 		<div class="content-text-container">
 			{#if organization && location}
@@ -41,15 +56,17 @@
 				<p class="content-technologies">{technologies}</p>
 			{/if}
 		</div>
-		{#if imgSrc && align === "left"}
-			<!-- <img class="preview" src={imgSrc} alt="Preview/Logo" /> -->
-			<!-- TODO: Add video preview option for projects, include for both right and left alignments (here only for left) -->
-			<iframe
-				class="preview"
-				title="Preview"
-				src="https://www.youtube.com/embed/mxsNwl-X8tM"
-				allowfullscreen
-			/>
+		{#if align === "left"}
+			{#if imgSrc}
+				<img class="preview" src={imgSrc} alt="Preview/Logo" />
+			{:else if videoSrc}
+				<iframe
+					class="preview"
+					title="Preview"
+					src={videoSrc}
+					allowfullscreen
+				/>
+			{/if}
 		{/if}
 	</div>
 </div>

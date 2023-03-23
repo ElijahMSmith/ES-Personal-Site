@@ -4,12 +4,13 @@
 	import type { Project } from "./types";
 
 	let projectsWithImg = allProjects.map<Project>((proj) => {
-		return { ...proj, imgSrc: "github.svg" };
+		if (!proj.imgSrc && !proj.videoSrc) proj.imgSrc = "github.svg";
+		return proj;
 	});
 </script>
 
 <section id="projects">
-	<Timeline header="Projects" content={projectsWithImg} />
+	<Timeline header="Projects" content={allProjects} />
 </section>
 
 <style lang="scss">
