@@ -21,8 +21,6 @@
 	} else if (isProject(item)) {
 		technologies = (item as Experience).technologies;
 	}
-
-	console.log(align, imgSrc, videoSrc, title);
 </script>
 
 <div class="content-container {align}">
