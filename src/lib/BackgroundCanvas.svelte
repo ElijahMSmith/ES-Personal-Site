@@ -14,7 +14,7 @@
 		maxc = 0;
 
 	onMount(() => {
-		let canvas = document.querySelector('canvas');
+		let canvas = document.querySelector("canvas");
 		let context: CanvasRenderingContext2D;
 		let boxes = [];
 
@@ -109,23 +109,20 @@
 					let fracRight = boxes[r][c][1].val;
 
 					const LENGTH = BOXSIZE + LWIDTH;
-					const EXCESS = LWIDTH / 2;
+					const EXCESS = Math.floor(LWIDTH / 2);
+
+					const LF_BOTTOM = Math.floor(LENGTH * fracBottom);
+					const LF_RIGHT = Math.floor(LENGTH * fracRight);
 
 					// Bottom
 					if (boxes[r][c][0].drawOutward) {
 						context.beginPath();
 						context.moveTo(x - EXCESS, y + BOXSIZE);
-						context.lineTo(
-							x + LENGTH * fracBottom - EXCESS,
-							y + BOXSIZE
-						);
+						context.lineTo(x + LF_BOTTOM - EXCESS, y + BOXSIZE);
 						context.stroke();
 					} else {
 						context.beginPath();
-						context.moveTo(
-							x + LENGTH * fracBottom - EXCESS,
-							y + BOXSIZE
-						);
+						context.moveTo(x + LF_BOTTOM - EXCESS, y + BOXSIZE);
 						context.lineTo(x + LENGTH - EXCESS, y + BOXSIZE);
 						context.stroke();
 					}
@@ -134,17 +131,11 @@
 					if (boxes[r][c][1].drawOutward) {
 						context.beginPath();
 						context.moveTo(x + BOXSIZE, y - EXCESS);
-						context.lineTo(
-							x + BOXSIZE,
-							y + LENGTH * fracRight - EXCESS
-						);
+						context.lineTo(x + BOXSIZE, y + LF_RIGHT - EXCESS);
 						context.stroke();
 					} else {
 						context.beginPath();
-						context.moveTo(
-							x + BOXSIZE,
-							y + LENGTH * fracRight - EXCESS
-						);
+						context.moveTo(x + BOXSIZE, y + LF_RIGHT - EXCESS);
 						context.lineTo(x + BOXSIZE, y + LENGTH - EXCESS);
 						context.stroke();
 					}
@@ -165,7 +156,7 @@
 
 		setInterval(() => {
 			updateWalls();
-			draw();
+            requestAnimationFrame(draw);
 		}, TICK);
 	});
 </script>

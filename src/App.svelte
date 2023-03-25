@@ -34,7 +34,7 @@
 	});
 </script>
 
-<!-- <BackgroundCanvas /> -->
+<BackgroundCanvas />
 <NavBar />
 <main>
 	<div id="main-container">
