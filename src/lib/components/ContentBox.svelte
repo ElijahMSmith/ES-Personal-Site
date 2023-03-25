@@ -19,7 +19,7 @@
 		location = (item as Experience).location;
 		technologies = (item as Experience).technologies;
 	} else if (isProject(item)) {
-		technologies = (item as Experience).technologies;
+		technologies = (item as Project).technologies;
 	}
 </script>
 

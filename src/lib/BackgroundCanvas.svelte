@@ -1,45 +1,67 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 
-	const bgColor = "#462848";
-	const color = "#5e3461";
-	const CHANGEDUR = 5000; // ms
-	const TICK = 50; // ms
+	const color = "rgba(94, 52, 97, 0.3)";
+	const CHANGEDUR = 3000; // ms
+	const TICK = 100; // ms
 	const STEP = TICK / CHANGEDUR;
-	const boxSize = 50;
+	const BOXSIZE = 50;
 	const LWIDTH = 5;
 
-	const maxw = window.innerWidth;
-	const maxh = window.innerHeight;
-	const maxr = Math.ceil(maxh / boxSize);
-	const maxc = Math.ceil(maxw / boxSize);
+	let maxw = 0,
+		maxh = 0,
+		maxr = 0,
+		maxc = 0;
 
 	onMount(() => {
-		const canvas = document.querySelector("canvas");
-		canvas.width = maxw;
-		canvas.height = maxh;
+		let canvas = document.querySelector('canvas');
+		let context: CanvasRenderingContext2D;
+		let boxes = [];
 
-		let context = canvas.getContext("2d");
-		context.strokeStyle = color;
-		context.lineWidth = LWIDTH;
+		updateCanvas();
 
-		const boxes = [];
+		window.onresize = () => {
+			updateCanvas();
+		};
 
-		for (let r = 0; r <= maxr; r++) {
-			boxes.push([]);
-			for (let c = 0; c <= maxc; c++) {
-				boxes[r].push([]);
-				boxes[r][c] = [];
-				for (let w = 0; w < 2; w++) {
-					const newThing = {
-						val: Math.floor(Math.random() * 101) / 100,
-						dir: randDir(0),
-						wait: CHANGEDUR,
-						drawOutward: Math.random() < 0.5,
-					};
-					boxes[r][c].push(newThing);
+		function updateCanvas() {
+			getDims();
+			canvas.width = maxw;
+			canvas.height = maxh;
+			context = canvas.getContext("2d");
+			context.strokeStyle = color;
+			context.lineWidth = LWIDTH;
+			updateBoxes();
+		}
+
+		function updateBoxes() {
+			boxes = [];
+			for (let r = 0; r <= maxr; r++) {
+				boxes.push([]);
+				for (let c = 0; c <= maxc; c++) {
+					boxes[r].push([]);
+					boxes[r][c] = [];
+					for (let w = 0; w < 2; w++) {
+						const newThing = {
+							val: Math.floor(Math.random() * 101) / 100,
+							dir: randDir(0),
+							wait: CHANGEDUR,
+							drawOutward: Math.random() < 0.5,
+						};
+						boxes[r][c].push(newThing);
+					}
 				}
 			}
+		}
+
+		function getDims() {
+			// const body = document.querySelector("body");
+			// maxw = body.offsetWidth;
+			// maxh = body.offsetHeight;
+			maxw = window.innerWidth;
+			maxh = window.innerHeight;
+			maxr = Math.ceil(maxh / BOXSIZE);
+			maxc = Math.ceil(maxw / BOXSIZE);
 		}
 
 		function updateWalls() {
@@ -80,50 +102,50 @@
 			context.clearRect(0, 0, canvas.width, canvas.height);
 			for (let r = 0; r <= maxr; r++) {
 				for (let c = 0; c <= maxc; c++) {
-					let x = (c - 1) * boxSize;
-					let y = (r - 1) * boxSize;
+					let x = (c - 1) * BOXSIZE;
+					let y = (r - 1) * BOXSIZE;
 
 					let fracBottom = boxes[r][c][0].val;
 					let fracRight = boxes[r][c][1].val;
 
-					const LENGTH = boxSize + LWIDTH;
+					const LENGTH = BOXSIZE + LWIDTH;
 					const EXCESS = LWIDTH / 2;
 
 					// Bottom
 					if (boxes[r][c][0].drawOutward) {
 						context.beginPath();
-						context.moveTo(x - EXCESS, y + boxSize);
+						context.moveTo(x - EXCESS, y + BOXSIZE);
 						context.lineTo(
 							x + LENGTH * fracBottom - EXCESS,
-							y + boxSize
+							y + BOXSIZE
 						);
 						context.stroke();
 					} else {
 						context.beginPath();
 						context.moveTo(
 							x + LENGTH * fracBottom - EXCESS,
-							y + boxSize
+							y + BOXSIZE
 						);
-						context.lineTo(x + LENGTH - EXCESS, y + boxSize);
+						context.lineTo(x + LENGTH - EXCESS, y + BOXSIZE);
 						context.stroke();
 					}
 
 					// Right
 					if (boxes[r][c][1].drawOutward) {
 						context.beginPath();
-						context.moveTo(x + boxSize, y - EXCESS);
+						context.moveTo(x + BOXSIZE, y - EXCESS);
 						context.lineTo(
-							x + boxSize,
+							x + BOXSIZE,
 							y + LENGTH * fracRight - EXCESS
 						);
 						context.stroke();
 					} else {
 						context.beginPath();
 						context.moveTo(
-							x + boxSize,
+							x + BOXSIZE,
 							y + LENGTH * fracRight - EXCESS
 						);
-						context.lineTo(x + boxSize, y + LENGTH - EXCESS);
+						context.lineTo(x + BOXSIZE, y + LENGTH - EXCESS);
 						context.stroke();
 					}
 				}
@@ -154,7 +176,7 @@
 	canvas {
 		width: 100%;
 		height: 100%;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		z-index: 0;
