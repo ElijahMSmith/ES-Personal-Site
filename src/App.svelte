@@ -9,6 +9,7 @@
 	import { gsap } from "gsap";
 	import ScrollTrigger from "gsap/ScrollTrigger";
 	import { onMount } from "svelte";
+	import BackgroundCanvas from "./lib/BackgroundCanvas.svelte";
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -33,6 +34,7 @@
 	});
 </script>
 
+<BackgroundCanvas />
 <NavBar />
 <main>
 	<div id="main-container">
@@ -53,6 +55,11 @@
 	$duration: 0.7s;
 	$cursor-col: $text-highlight;
 	$opacity: 0.3;
+
+	main {
+		position: relative;
+		z-index: 1;
+	}
 
 	.cursor {
 		opacity: $opacity;
