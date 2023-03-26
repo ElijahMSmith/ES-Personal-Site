@@ -1,6 +1,5 @@
--   Button to remove background animation
-    -   Make sure interval stops too!
-    -   Active menu changes while scrolling (intersection observer?)
+-   Where did cursors go?
+-   Active menu changes while scrolling (intersection observer?)
 
 -   More fun animations! Ideas:
     -   Subtle motion in the background or activity (maybe a blur that follows you?)
