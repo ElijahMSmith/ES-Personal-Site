@@ -1,7 +1,7 @@
 import type { Project } from "./types";
 import type { Experience } from "./types";
 
-const previewURLBase = "https://www.youtube.com/embed/";
+const previewURLBase = "https://www.youtube-nocookie.com/embed/";
 
 function getPreviewURL(videoID: string) {
 	return previewURLBase + videoID;
@@ -92,7 +92,7 @@ export const allProjects: Project[] = [
 		],
 		technologies: "Python, ROS2, TensorFlow, opencv-python",
 		link: "https://github.com/ElijahMSmith/Senior-Design-Emotion-Game",
-        imgSrc: "images/BEARMAX.png"
+		imgSrc: "images/BEARMAX.png",
 	},
 	{
 		title: "Mobile Deck of Cards",
