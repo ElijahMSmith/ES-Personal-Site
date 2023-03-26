@@ -1,4 +1,3 @@
--   Where did cursors go?
 -   Active menu changes while scrolling (intersection observer?)
 
 -   More fun animations! Ideas:
