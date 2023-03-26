@@ -24,9 +24,10 @@
 		height: 1.6em;
 		position: relative;
 		margin: 0;
-		background: $gray;
+		background: #fff;
 		border: none;
 		border-radius: 15px;
+		transition: background-color 0.3s;
 	}
 
 	button::before {
@@ -35,22 +36,22 @@
 		width: 1.3em;
 		height: 1.3em;
 		border-radius: 50%;
-		background: #fff;
+		background: $bg-alternate;
 		top: 0.13em;
 		right: 1.5em;
-		transition: transform 0.3s;
+		transition: transform 0.3s, background-color 0.3s;
 	}
 
 	button[aria-checked="true"] {
-		background-color: $accent;
+		background-color: $bg-alternate;
 	}
 
 	button[aria-checked="true"]::before {
 		transform: translateX(1.3em);
-		transition: transform 0.3s;
+		background-color: #fff;
 	}
 
 	button:focus {
-		box-shadow: 0 0px 0px 1px $accent;
+		box-shadow: 0 0px 0px 1px $bg-alternate;
 	}
 </style>

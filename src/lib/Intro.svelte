@@ -15,7 +15,6 @@
 			<div class="switch-container">
 				<Switch bind:checked={bkgDisabled} />
 				<span>Disable Background Animation</span>
-				<!-- TODO: aria label? -->
 			</div>
 		</div>
 		<div class="right">

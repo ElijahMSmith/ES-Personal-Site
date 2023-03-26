@@ -157,7 +157,6 @@
 		}
 
 		interval = setInterval(() => {
-			console.log("Going");
 			updateWalls();
 			requestAnimationFrame(draw);
 		}, TICK);
