@@ -32,13 +32,17 @@
 			});
 		});
 	});
+
+	let bkgDisabled = false;
 </script>
 
-<BackgroundCanvas />
+{#if !bkgDisabled}
+	<BackgroundCanvas />
+{/if}
 <NavBar />
 <main>
 	<div id="main-container">
-		<Intro />
+		<Intro bind:bkgDisabled />
 		<About />
 		<Experiences />
 		<Projects />

@@ -1,3 +1,8 @@
+<script lang="ts">
+	import Switch from "./components/Switch.svelte";
+	export let bkgDisabled: boolean;
+</script>
+
 <section id="intro">
 	<div id="container">
 		<div class="left">
@@ -7,6 +12,10 @@
 				Creative thinker, dedicated leader, problem-solver, and
 				all-around code enthusiast.
 			</p>
+			<div class="switch-container">
+				<Switch bind:checked={bkgDisabled} />
+				<span>Disable Background Animation</span>
+			</div>
 		</div>
 		<div class="right">
 			<div class="img-wrapper">
@@ -74,6 +83,17 @@
 		font-size: 1.5em;
 	}
 
+	.switch-container {
+		display: flex;
+		justify-content: start;
+		margin-top: 5vh;
+		span {
+			color: $text-highlight;
+			margin-left: 20px;
+			font-size: 1em;
+		}
+	}
+
 	img {
 		width: 100%;
 		border-radius: 100%;
@@ -81,6 +101,8 @@
 		position: relative;
 	}
 
+	$trans-dur: 0.3s;
+	$anim-dur: 20s;
 	.img-wrapper {
 		$border-size: 10px;
 		width: 30vw;
@@ -101,16 +123,25 @@
 			border: $border-size dashed $bg-alternate;
 			stroke-dashoffset: 100;
 			z-index: 1;
-			transition: all 0.3s linear;
-			animation: spin 20s linear 0s infinite forwards;
+			transition: all $trans-dur linear;
+			animation: spin $anim-dur linear 0s infinite forwards;
 		}
 
 		&:hover {
 			&::after {
-				border-width: calc(2 * $border-size);
-				left: calc(-2 * $border-size);
-				top: calc(-2 * $border-size);
-				animation-duration: 5s;
+				border-width: 2 * $border-size;
+				left: -2 * $border-size;
+				top: -2 * $border-size;
+				animation-duration: calc($anim-dur / 4);
+			}
+		}
+	}
+
+	@media (prefers-reduced-motion) {
+		.img-wrapper {
+			::after {
+				transition-duration: 2 * $trans-dur;
+				animation-duration: 2 * $anim-dur;
 			}
 		}
 	}
@@ -152,6 +183,10 @@
 		#container {
 			width: 80%;
 			flex-direction: column;
+		}
+
+		.switch-container {
+			justify-content: center;
 		}
 
 		.left {

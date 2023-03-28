@@ -1,66 +1,91 @@
 <script lang="ts">
 	export let dims = "5vw";
-	let innerWidth = 0;
+	let innerWidth = 0,
+		halfWidth = 0;
+
+	$: halfWidth = Math.floor(Number(dims.substring(0, dims.length - 2)) / 2);
+
+	type Link = {
+		href: string;
+		src: string;
+		alt: string;
+	};
+
+	let links: Link[] = [
+		{
+			href: "https://github.com/ElijahMSmith",
+			src: "github.svg",
+			alt: "GitHub link",
+		},
+		{
+			href: "https://linkedin.com/in/elijahmsmith",
+			src: "linkedin.svg",
+			alt: "LinkedIn link",
+		},
+		{
+			href: "https://codepen.io/ElijahMSmith",
+			src: "codepen.svg",
+			alt: "Codepen link",
+		},
+	];
+
+	if (innerWidth <= 632)
+		links = [
+			{
+				href: "mailto:elijah.matthew.smith@gmail.com",
+				src: "email.svg",
+				alt: "Email link",
+			},
+			...links,
+		];
 </script>
 
 <svelte:window bind:innerWidth />
 <div>
-	{#if innerWidth <= 632}
-		<a
-			target="_blank"
-			rel="noopener noreferrer"
-			href="mailto:elijah.matthew.smith@gmail.com"
-		>
+	{#each links as link}
+		<a target="_blank" rel="noopener noreferrer" href={link.href}>
+			<svg width={dims} height={dims}>
+				<circle
+					cx={halfWidth}
+					cy={halfWidth}
+					r={halfWidth + 15}
+					stroke="white"
+					stroke-width="2"
+					fill="none"
+				/>
+			</svg>
 			<img
 				style="width:{dims}; height: {dims}"
-				src="/email.svg"
-				alt="Email link"
+				src={link.src}
+				alt={link.alt}
 			/>
 		</a>
-	{/if}
-
-	<a
-		target="_blank"
-		rel="noopener noreferrer"
-		href="https://github.com/ElijahMSmith"
-	>
-		<img
-			style="width:{dims}; height: {dims}"
-			src="github.svg"
-			alt="GitHub link"
-		/>
-	</a>
-
-	<a
-		target="_blank"
-		rel="noopener noreferrer"
-		href="https://linkedin.com/in/elijahmsmith"
-	>
-		<img
-			style="width:{dims}; height: {dims}"
-			src="linkedin.svg"
-			alt="LinkedIn link"
-		/>
-	</a>
-
-	<a
-		target="_blank"
-		rel="noopener noreferrer"
-		href="https://codepen.io/ElijahMSmith"
-	>
-		<img
-			style="width:{dims}; height: {dims}"
-			src="codepen.svg"
-			alt="Codepen Link"
-		/>
-	</a>
+	{/each}
 </div>
 
 <style lang="scss">
 	a {
 		background: none;
 		border: none;
-		padding: 0px;
 		margin: 0px 4vw;
+		position: relative;
+		display: inline-block;
+	}
+
+	a:hover {
+		svg {
+			stroke-dashoffset: 0;
+		}
+	}
+
+	svg {
+		transform: rotate(-90deg);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		overflow: visible;
+		stroke-dasharray: 450;
+		stroke-dashoffset: 450;
+		transition: stroke-dashoffset 0.4s linear;
 	}
 </style>

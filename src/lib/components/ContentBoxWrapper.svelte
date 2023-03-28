@@ -35,6 +35,8 @@
 	.content-wrapper {
 		width: 80%;
 		display: flex;
+		transition: transform 0.1s linear;
+
 		&.left {
 			justify-content: start;
 		}
@@ -42,5 +44,9 @@
 		&.right {
 			justify-content: end;
 		}
+	}
+
+	a.content-wrapper:hover {
+		transform: scale(1.015);
 	}
 </style>

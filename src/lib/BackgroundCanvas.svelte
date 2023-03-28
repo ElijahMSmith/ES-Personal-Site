@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import { onDestroy, onMount } from "svelte";
 
 	const color = "rgba(94, 52, 97, 0.3)";
 	const CHANGEDUR = 3000; // ms
@@ -12,6 +12,8 @@
 		maxh = 0,
 		maxr = 0,
 		maxc = 0;
+
+	let interval;
 
 	onMount(() => {
 		let canvas = document.querySelector("canvas");
@@ -154,10 +156,14 @@
 			else return 0;
 		}
 
-		setInterval(() => {
+		interval = setInterval(() => {
 			updateWalls();
-            requestAnimationFrame(draw);
+			requestAnimationFrame(draw);
 		}, TICK);
+	});
+
+	onDestroy(() => {
+		if (interval) clearInterval(interval);
 	});
 </script>
 

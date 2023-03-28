@@ -31,7 +31,7 @@
 					trigger: selector,
 					start: "top 85%",
 				},
-				duration: 0.75,
+				duration: 0.5,
 				delay: (i + 3) * 0.1,
 			});
 		}
