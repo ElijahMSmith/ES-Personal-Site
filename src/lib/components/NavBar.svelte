@@ -1,31 +1,121 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 
-	let innerWidth: number;
-
 	$: showMobileMenu = false;
+	let innerWidth: number;
+	let innerHeight: number;
+
+	let activeLink: HTMLAnchorElement;
+	let activeSection = "intro";
+
+	let lastScrollTop = 0;
+	const barProps = {
+		shouldClose: false,
+		isOpen: true,
+	};
+	let closeInterval: number;
 
 	function toggleMenu() {
 		showMobileMenu = !showMobileMenu;
 	}
 
-	onMount(() => {
-		document.querySelectorAll(".nav-link").forEach((link) => {
-			link.addEventListener("click", () => {
-				document
-					.querySelectorAll(".nav-link")
-					.forEach((otherLink) =>
-						otherLink.classList.remove("active")
-					);
-				link.classList.add("active");
+	function updateActive() {
+		let maxCoveringPercent = 0;
+		let maxCoveringSection = "";
+		document.querySelectorAll<HTMLElement>("section").forEach((section) => {
+			// x, y, width, height, top, left, right, bottom
+			let bbox = section.getBoundingClientRect();
 
-				if (showMobileMenu) toggleMenu();
-			});
+			let coverPx = Math.max(
+				0,
+				Math.min(innerHeight, bbox.bottom) - Math.max(0, bbox.top)
+			);
+
+			let coverFrac = coverPx / innerHeight;
+			if (coverFrac > maxCoveringPercent) {
+				maxCoveringPercent = coverFrac;
+				maxCoveringSection = section.id;
+			}
+
+			// console.log(section.id + ": " + coverFrac);
 		});
+		if (maxCoveringSection !== activeSection) {
+			activeSection = maxCoveringSection;
+			activeLink = document.querySelector(
+				`a[href="#${maxCoveringSection}"]`
+			);
+			updateLinkStyling();
+		}
+	}
+
+	function updateLinkStyling() {
+		document
+			.querySelectorAll(".nav-link")
+			.forEach((otherLink) => otherLink.classList.remove("active"));
+
+		if (activeLink) activeLink.classList.add("active");
+	}
+
+	function updateNavBar() {
+		const st = window.pageYOffset || document.documentElement.scrollTop;
+		if (st < lastScrollTop) {
+			// Scroll up - open navbar if closed immediately
+			if (!barProps.isOpen) {
+				barProps.isOpen = true;
+				document.querySelector<HTMLDivElement>(
+					"#nav-container"
+				).style.transform = "translateY(0%)";
+			}
+			barProps.shouldClose = false;
+		} else if (st > lastScrollTop) {
+			// Scroll down
+			// Do nothing if interval already set
+			if (closeInterval) return;
+
+			// Set shouldClose to true
+			// Set interval to close after x seconds
+			// At that time, if still shouldClose, transform and set isOpen to false
+			barProps.shouldClose = true;
+			closeInterval = setInterval(() => {
+				// console.log(new Date().getMilliseconds(), barProps);
+				if (barProps.shouldClose) {
+					barProps.isOpen = false;
+					document.querySelector<HTMLDivElement>(
+						"#nav-container"
+					).style.transform = "translateY(-100%)";
+					barProps.shouldClose = false;
+				}
+				clearInterval(closeInterval);
+				closeInterval = undefined;
+			}, 500);
+		}
+		// For Mobile or negative scrolling
+		lastScrollTop = st <= 0 ? 0 : st;
+	}
+
+	onMount(() => {
+		document
+			.querySelectorAll<HTMLAnchorElement>(".nav-link")
+			.forEach((link) => {
+				link.addEventListener("click", () => {
+					activeLink = link;
+					updateLinkStyling();
+					if (showMobileMenu) toggleMenu();
+				});
+			});
+
+		window.addEventListener(
+			"scroll",
+			() => {
+				updateActive();
+				updateNavBar();
+			},
+			false
+		);
 	});
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:innerWidth bind:innerHeight />
 
 <div id="nav-container">
 	<a
@@ -65,6 +155,7 @@
 		padding: 0vh 10vw;
 		box-sizing: border-box;
 		z-index: 100;
+		transition: transform 0.3s ease-in-out;
 	}
 
 	#drawer-toggle {

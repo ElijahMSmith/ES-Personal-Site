@@ -24,9 +24,9 @@
 </script>
 
 <div class="content-container {align}">
+	<p class="date">{date}</p>
 	<h3 class="content-title">{title}</h3>
 	<div class="inner-container {align}">
-		<p class="date">{date}</p>
 		{#if align === "right"}
 			{#if imgSrc}
 				<img class="preview" src={imgSrc} alt="Preview/Logo" />
@@ -74,10 +74,13 @@
 		color: $text-primary;
 	}
 
+    $inner-padding: 30px;
+
 	.content-container {
 		background-color: $bg-accent;
 		padding: 20px 30px;
 		display: flex;
+		position: relative;
 		flex-direction: column;
 		justify-content: center;
 		min-height: 20vh;
@@ -85,10 +88,16 @@
 
 		&.left {
 			text-align: start;
+			.date {
+				left: $inner-padding;
+			}
 		}
 
 		&.right {
 			text-align: end;
+			.date {
+				right: $inner-padding;
+			}
 		}
 	}
 
@@ -103,11 +112,8 @@
 				align-items: start;
 				text-align: start;
 			}
-			.date {
-				left: calc(10vw + 30px);
-			}
 			.preview {
-				margin-left: 30px;
+				margin-left: $inner-padding;
 			}
 		}
 
@@ -117,11 +123,8 @@
 				align-items: end;
 				text-align: end;
 			}
-			.date {
-				right: calc(10vw + 30px);
-			}
 			.preview {
-				margin-right: 30px;
+				margin-right: $inner-padding;
 			}
 		}
 	}

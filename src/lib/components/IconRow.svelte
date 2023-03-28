@@ -48,7 +48,7 @@
 				<circle
 					cx={halfWidth}
 					cy={halfWidth}
-					r={halfWidth + 10}
+					r={halfWidth + 15}
 					stroke="white"
 					stroke-width="2"
 					fill="none"
@@ -79,12 +79,13 @@
 	}
 
 	svg {
+		transform: rotate(-90deg);
 		position: absolute;
 		top: 0px;
 		left: 0px;
 		overflow: visible;
-		stroke-dasharray: 250;
-		stroke-dashoffset: 250;
-		transition: stroke-dashoffset 0.3s linear;
+		stroke-dasharray: 450;
+		stroke-dashoffset: 450;
+		transition: stroke-dashoffset 0.4s linear;
 	}
 </style>
