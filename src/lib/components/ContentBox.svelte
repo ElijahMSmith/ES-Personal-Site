@@ -74,7 +74,7 @@
 		color: $text-primary;
 	}
 
-    $inner-padding: 30px;
+	$inner-padding: 30px;
 
 	.content-container {
 		background-color: $bg-accent;
@@ -212,6 +212,10 @@
 		.content-technologies {
 			font-size: 1em;
 			font-weight: normal;
+		}
+
+		.date {
+			width: 100%;
 		}
 	}
 </style>

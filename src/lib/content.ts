@@ -84,13 +84,13 @@ export const allExperiences: Experience[] = [
 
 export const allProjects: Project[] = [
 	{
-		title: "BEARMAX Emotion Recognition Game",
+		title: "Bearmax",
 		date: "Aug 2022 - Present",
 		description: [
-			"An interactive game between the BEARMAX robot and a child user with autism to practice Social and Emotional Learning (SEL).",
-			"One of many parts of my team's Senior Design project.",
+            "A companion robot for children with autism to facilitate social and emotional learning.",
+            "Developed emotion learning game and assisted on all other software systems."
 		],
-		technologies: "Python, ROS2, TensorFlow, opencv-python",
+		technologies: "Python, ROS2, TensorFlow, opencv-python, JavaScript, MERN Stack",
 		link: "https://github.com/ElijahMSmith/Senior-Design-Emotion-Game",
 		imgSrc: "images/BEARMAX.png",
 	},
@@ -104,17 +104,6 @@ export const allProjects: Project[] = [
 			"TypeScript, Express.js, MongoDB Atlas, Socket.io, Mocha.js",
 		link: "https://github.com/ElijahMSmith/DeckOfCards-BE",
 		videoSrc: getPreviewURL("mxsNwl-X8tM"),
-	},
-	{
-		title: "Band Names",
-		date: "Oct 2021 - Nov 2022",
-		description: [
-			"Passion project Chrome extension to suggest ridiculous names for your band to be used as usernames.",
-			"Pick from real things said by those around me or generate a new verb + noun combination.",
-		],
-		technologies: "TypeScript, Chrome API",
-		link: "https://github.com/ElijahMSmith/BandNames",
-		imgSrc: "images/BandNames.png",
 	},
 	{
 		title: "Daily Challenge Problem Bot",
@@ -137,8 +126,19 @@ export const allProjects: Project[] = [
 		videoSrc: getPreviewURL("2jvEuN-SJQ4"),
 	},
 	{
+		title: "Band Names",
+		date: "Nov 2020 - Present",
+		description: [
+			"Passion project Chrome extension to suggest ridiculous names for your band to be used as usernames.",
+			"Pick from real things said by those around me or generate a new verb + noun combination.",
+		],
+		technologies: "TypeScript, Chrome API",
+		link: "https://github.com/ElijahMSmith/BandNames",
+		imgSrc: "images/BandNames.png",
+	},
+	{
 		title: "Othello",
-		date: "Oct 2019 - Dec 2019",
+		date: "Oct - Dec 2019",
 		description: [
 			"Desktop game to play the classic board game Othello against another player or one of three computer difficulties.",
 		],
