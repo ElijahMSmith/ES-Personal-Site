@@ -85,12 +85,13 @@ export const allExperiences: Experience[] = [
 export const allProjects: Project[] = [
 	{
 		title: "Bearmax",
-		date: "Aug 2022 - Present",
+		date: "Aug 2022 - April 2023",
 		description: [
-            "A companion robot for children with autism to facilitate social and emotional learning.",
-            "Developed emotion learning game and assisted on all other software systems."
+			"A companion robot for children with autism to facilitate social and emotional learning.",
+			"Developed emotion learning game and assisted on all other software systems.",
 		],
-		technologies: "Python, ROS2, TensorFlow, opencv-python, JavaScript, MERN Stack",
+		technologies:
+			"Python, ROS2, TensorFlow, opencv-python, JavaScript, MERN Stack",
 		link: "https://github.com/ElijahMSmith/Senior-Design-Emotion-Game",
 		imgSrc: "images/BEARMAX.png",
 	},
@@ -98,7 +99,8 @@ export const allProjects: Project[] = [
 		title: "Mobile Deck of Cards",
 		date: "Jan - Apr 2022",
 		description: [
-			"Game server for a React Native app that allows any group of friends to connect and play card games using a simulated deck of cards.",
+			"React Native app to let groups play any card game, any time, anywhere.",
+			"Developed the game server for handing game actions and authentication.",
 		],
 		technologies:
 			"TypeScript, Express.js, MongoDB Atlas, Socket.io, Mocha.js",
@@ -109,7 +111,8 @@ export const allProjects: Project[] = [
 		title: "Daily Challenge Problem Bot",
 		date: "Oct 2021 - Jan 2023",
 		description: [
-			"A Discord bot to pick and send out a daily easy, medium, and hard LeetCode problem for practice during interview seasons.",
+			"A Discord bot to post the daily LeetCode challenge to your server.",
+			"Designed to encourage comradery during university-level interview season.",
 		],
 		technologies: "TypeScript, Discord.js, Google Cloud Functions",
 		link: "https://github.com/ElijahMSmith/Daily-Challenge-Problem",
@@ -119,7 +122,8 @@ export const allProjects: Project[] = [
 		title: "Kronos",
 		date: "Oct 2021",
 		description: [
-			"Desktop visualization tool for improving time management and event timeliness. Made at ShellHacks 2021.",
+			"Desktop visualization tool for improving time management and event timeliness.",
+			"Developed at ShellHacks 2021.",
 		],
 		technologies: "Python, tkinter, Google Calendar API",
 		link: "https://github.com/ElijahMSmith/Kronos",
@@ -136,11 +140,14 @@ export const allProjects: Project[] = [
 		link: "https://github.com/ElijahMSmith/BandNames",
 		imgSrc: "images/BandNames.png",
 	},
+	// TODO Mystery: why does this bullet wrap early instead of filling the full max-width?
+	// TODO: Can we turn this into right-aligned bullets that look OK?
 	{
 		title: "Othello",
 		date: "Oct - Dec 2019",
 		description: [
-			"Desktop game to play the classic board game Othello against another player or one of three computer difficulties.",
+			"Graphical desktop implementation of the classic board game Othello (Reversi).",
+			"Challenge your friends or any of three levels of AI.",
 		],
 		technologies: "Java, Java Swing",
 		link: "https://github.com/ElijahMSmith/Othello",

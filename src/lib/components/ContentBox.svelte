@@ -140,10 +140,13 @@
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: space-evenly;
 		flex: 3;
 		& > * {
 			margin: 10px 0px;
+		}
+		ul {
+			text-align: start;
 		}
 	}
 
@@ -178,7 +181,6 @@
 
 	.content-description {
 		font-size: 1.2em;
-		text-align: start;
 	}
 
 	.content-technologies {
@@ -203,6 +205,8 @@
 
 		.content-subtitle {
 			font-size: 1.2em;
+			margin-bottom: 0;
+			font-weight: normal;
 		}
 
 		.content-description {
@@ -212,6 +216,13 @@
 		.content-technologies {
 			font-size: 1em;
 			font-weight: normal;
+		}
+
+		.content-text-container {
+			margin-top: 20px;
+			ul {
+				display: none;
+			}
 		}
 
 		.date {
