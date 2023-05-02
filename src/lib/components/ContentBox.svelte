@@ -108,10 +108,7 @@
 
 		&.left {
 			justify-content: start;
-			.content-text-container {
-				align-items: start;
-				text-align: start;
-			}
+			align-items: start;
 			.preview {
 				margin-left: $inner-padding;
 			}
@@ -119,10 +116,7 @@
 
 		&.right {
 			justify-content: end;
-			.content-text-container {
-				align-items: end;
-				text-align: end;
-			}
+			align-items: end;
 			.preview {
 				margin-right: $inner-padding;
 			}
@@ -144,9 +138,6 @@
 		flex: 3;
 		& > * {
 			margin: 10px 0px;
-		}
-		ul {
-			text-align: start;
 		}
 	}
 
@@ -181,6 +172,7 @@
 
 	.content-description {
 		font-size: 1.2em;
+		text-align: start;
 	}
 
 	.content-technologies {

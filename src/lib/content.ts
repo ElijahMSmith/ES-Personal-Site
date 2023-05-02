@@ -93,7 +93,7 @@ export const allProjects: Project[] = [
 		technologies:
 			"Python, ROS2, TensorFlow, opencv-python, JavaScript, MERN Stack",
 		link: "https://github.com/ElijahMSmith/Senior-Design-Emotion-Game",
-		imgSrc: "images/BEARMAX.png",
+		videoSrc: getPreviewURL("euNmx8sbuYU"),
 	},
 	{
 		title: "Mobile Deck of Cards",
@@ -140,8 +140,6 @@ export const allProjects: Project[] = [
 		link: "https://github.com/ElijahMSmith/BandNames",
 		imgSrc: "images/BandNames.png",
 	},
-	// TODO Mystery: why does this bullet wrap early instead of filling the full max-width?
-	// TODO: Can we turn this into right-aligned bullets that look OK?
 	{
 		title: "Othello",
 		date: "Oct - Dec 2019",
@@ -151,5 +149,6 @@ export const allProjects: Project[] = [
 		],
 		technologies: "Java, Java Swing",
 		link: "https://github.com/ElijahMSmith/Othello",
+		imgSrc: "images/Othello.png",
 	},
 ];

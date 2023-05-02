@@ -33,7 +33,7 @@
 
 <style lang="scss">
 	.content-wrapper {
-		width: 80%;
+		max-width: 80%;
 		display: flex;
 		transition: transform 0.1s linear;
 
