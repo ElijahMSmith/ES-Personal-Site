@@ -13,7 +13,7 @@
 		maxr = 0,
 		maxc = 0;
 
-	let interval;
+	let interval: number;
 
 	onMount(() => {
 		let canvas = document.querySelector("canvas");
@@ -57,9 +57,6 @@
 		}
 
 		function getDims() {
-			// const body = document.querySelector("body");
-			// maxw = body.offsetWidth;
-			// maxh = body.offsetHeight;
 			maxw = window.innerWidth;
 			maxh = window.innerHeight;
 			maxr = Math.ceil(maxh / BOXSIZE);

@@ -9,13 +9,23 @@ function getPreviewURL(videoID: string) {
 
 export const allExperiences: Experience[] = [
 	{
+		title: "Software Engineer - Platform Engineering",
+		organization: "IMC",
+		location: "Chicago, IL",
+		date: "Aug 2023 - Present",
+		description: [
+			"Building next-generation internal tooling for deploying and operating applications.",
+		],
+		technologies: "Go, Python, Linux, Docker, Kubernetes, TeamCity, GoCD",
+		imgSrc: "images/IMCLogo.png",
+	},
+	{
 		title: "Software Engineer Intern",
 		organization: "IMC",
 		location: "Chicago, IL",
 		date: "Jun - Aug 2022",
 		description: [
-			"Developed internal developer tools on the Internal Cloud team.",
-			"Implemented features for Kubernetes cluster simulation tool and a JavaScript dashboard for monitoring results over time.",
+			"Implemented a Kubernetes cluster scheduling simulator and a JavaScript dashboard for monitoring performance over time.",
 		],
 		technologies: "Golang, React, TypeScript, Docker, Kubernetes",
 		imgSrc: "images/IMCLogo.png",
@@ -35,7 +45,7 @@ export const allExperiences: Experience[] = [
 	},
 	{
 		title: "Undergraduate Researcher, Team Lead",
-		organization: "Wearable Engineering and Assistive Robotics (WEAR) Lab",
+		organization: "Wearable Engineering and Assistive Robotics Lab",
 		location: "Orlando, FL",
 		date: "Oct 2019 - Feb 2022",
 		description: [
@@ -44,41 +54,6 @@ export const allExperiences: Experience[] = [
 		],
 		technologies: "Python, Ubuntu, Intel RealSense SDK",
 		imgSrc: "images/WEARLogo.png",
-	},
-	{
-		title: "President, Front End Team",
-		organization: "Knight Hacks",
-		location: "Orlando, FL",
-		date: "May 2022 - Mar 2023",
-		description: [
-			"Oversaw all club operations, conducted and organized interviews for new team members, and coordinated meetings and check-ins each week.",
-			"Facilitated planning and organization of events to help students grow technically and non-technically.",
-			"Developed pages and implemented login for our Hackathon Admin Tool.",
-		],
-		technologies: "React, TypeScript, TailwindCSS, GraphQL",
-		imgSrc: "images/KHLogo.jpg",
-	},
-	{
-		title: "Vice President",
-		organization: "Knight Hacks",
-		location: "Orlando, FL",
-		date: "Dec 2021 - May 2022",
-		description: [
-			"Assisted the President in all club operations and event organization.",
-			"Organized and presented 5 technical workshops throughout the semester on popular JavaScript topics.",
-		],
-		imgSrc: "images/KHLogo.jpg",
-	},
-	{
-		title: "Projects Director",
-		organization: "Knight Hacks",
-		location: "Orlando, FL",
-		date: "Aug 2021 - May 2022",
-		description: [
-			"Coordinated, oversaw, and provided resources to 20+ teams creating software projects.",
-			"Restructured the program format and requirements to increase participation over 500% and improve retention through the end of the semester.",
-		],
-		imgSrc: "images/KHLogo.jpg",
 	},
 ];
 
@@ -96,14 +71,24 @@ export const allProjects: Project[] = [
 		videoSrc: getPreviewURL("euNmx8sbuYU"),
 	},
 	{
+		title: "Vocabulary Trainer App",
+		date: "May 2023 - Present",
+		description: [
+			"A vocabulary repetition tool for long-term memorization that works on your schedule.",
+			"Create your own repetition frequency or practice any time.",
+		],
+		technologies: "Dart, Flutter, SQLite",
+		link: "https://github.com/ElijahMSmith/Vocabulary-Trainer-App",
+		imgSrc: "images/vocabApp.png",
+	},
+	{
 		title: "Mobile Deck of Cards",
 		date: "Jan - Apr 2022",
 		description: [
 			"React Native app to let groups play any card game, any time, anywhere.",
 			"Developed the game server for handing game actions and authentication.",
 		],
-		technologies:
-			"TypeScript, Express.js, MongoDB Atlas, Socket.io, Mocha.js",
+		technologies: "TypeScript, Express.js, MongoDB Atlas, Socket.io, Mocha.js",
 		link: "https://github.com/ElijahMSmith/DeckOfCards-BE",
 		videoSrc: getPreviewURL("mxsNwl-X8tM"),
 	},

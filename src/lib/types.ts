@@ -1,14 +1,3 @@
-export interface Experience extends Content {
-	location: string;
-	organization: string;
-	technologies?: string;
-}
-
-export interface Project extends Content {
-	technologies: string;
-	link: string;
-}
-
 export interface Content {
 	title: string;
 	date: string;
@@ -17,12 +6,21 @@ export interface Content {
 	videoSrc?: string;
 }
 
-export type OptionalContent = Content | undefined;
+export interface Experience extends Content {
+	location: string;
+	organization: string;
+	technologies: string;
+}
 
-export function isExperience(thing: OptionalContent): boolean {
+export interface Project extends Content {
+	technologies: string;
+	link: string;
+}
+
+export function isExperience(thing?: Content): boolean {
 	return thing && thing.hasOwnProperty("location");
 }
 
-export function isProject(thing: OptionalContent): boolean {
+export function isProject(thing?: Content): boolean {
 	return thing && thing.hasOwnProperty("link");
 }
