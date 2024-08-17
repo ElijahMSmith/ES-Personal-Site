@@ -3,7 +3,14 @@
 	import { onMount } from "svelte";
 
 	let leftTech = ["Golang", "Java", "TypeScript", "Python", "Dart", "C"];
-	let rightTech = ["Linux", "Docker", "Kubernetes/Helm", "MongoDB", "SQL", "ReactJS"];
+	let rightTech = [
+		"Linux",
+		"Docker",
+		"Kubernetes/Helm",
+		"MongoDB",
+		"SQL",
+		"ReactJS",
+	];
 
 	onMount(() => {
 		for (let i = 1; i <= 3; i++) {
@@ -41,7 +48,8 @@
 <section id="about">
 	<h1 class="slide-1">About Me</h1>
 	<p class="slide-2">
-		Software Developer. Platform Engineer. Programming Enthusiast.
+		I am a software engineer living in Chicago, IL developing platform solutions
+		for IMC Trading.
 	</p>
 	<p class="slide-3">
 		I'm always looking for new professional and volunteering oportunities! Here
