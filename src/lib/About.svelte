@@ -48,8 +48,8 @@
 <section id="about">
 	<h1 class="slide-1">About Me</h1>
 	<p class="slide-2">
-		I am a software engineer living in Chicago, IL developing platform solutions
-		for IMC Trading.
+		I am a software engineer living in Chicago, IL. Currently, I develop
+		platform solutions for IMC Trading.
 	</p>
 	<p class="slide-3">
 		I'm always looking for new professional and volunteering oportunities! Here
