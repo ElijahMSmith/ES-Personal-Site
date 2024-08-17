@@ -7,10 +7,10 @@
 	<div id="container">
 		<div class="left">
 			<h1 class="title">Elijah Smith</h1>
-			<h1 class="subtitle">Full-Stack Developer</h1>
+			<h1 class="subtitle">Software Engineer</h1>
 			<p class="body">
-				Creative thinker, dedicated leader, problem-solver, and
-				all-around code enthusiast.
+				Creative thinker, dedicated leader, problem-solver, and all-around code
+				enthusiast.
 			</p>
 			<div class="switch-container">
 				<Switch bind:checked={bkgDisabled} />

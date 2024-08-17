@@ -2,8 +2,8 @@
 	import { gsap } from "gsap";
 	import { onMount } from "svelte";
 
-	let leftTech = ["TypeScript", "React", "Svelte", "ExpressJS", "DiscordJS"];
-	let rightTech = ["Java", "Golang", "Python", "Docker", "Google Cloud"];
+	let leftTech = ["Golang", "Java", "TypeScript", "Python", "Dart", "C"];
+	let rightTech = ["Linux", "Docker", "Kubernetes/Helm", "MongoDB", "SQL", "ReactJS"];
 
 	onMount(() => {
 		for (let i = 1; i <= 3; i++) {
@@ -41,13 +41,11 @@
 <section id="about">
 	<h1 class="slide-1">About Me</h1>
 	<p class="slide-2">
-		Full-stack web developer passionate about JavaScript and related
-		technologies. Recent graduate from the University of Central Florida
-		(UCF) with a B.S. in Computer Science.
+		Software Developer. Platform Engineer. Programming Enthusiast.
 	</p>
 	<p class="slide-3">
-		I'm always looking for new opportunities. Here are some of my favorite
-		technologies to play with:
+		I'm always looking for new professional and volunteering oportunities! Here
+		are some of my favorite technologies to play with:
 	</p>
 	<div class="tech-container">
 		<ul class="left">
