@@ -16,7 +16,7 @@ export const allExperiences: Experience[] = [
 		description: [
 			"Building next-generation internal tooling for deploying and operating applications.",
 		],
-		technologies: "Go, Python, Linux, Docker, Kubernetes, TeamCity, GoCD",
+		technologies: "Go, Python, React, Linux, Docker, Kubernetes, TeamCity, GoCD",
 		imgSrc: "images/IMCLogo.png",
 	},
 	{

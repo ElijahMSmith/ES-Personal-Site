@@ -52,7 +52,7 @@
 		platform solutions for IMC Trading.
 	</p>
 	<p class="slide-3">
-		I'm always looking for new professional and volunteering oportunities! Here
+		I'm always looking for new professional and volunteering opportunities! Here
 		are some of my favorite technologies to play with:
 	</p>
 	<div class="tech-container">
